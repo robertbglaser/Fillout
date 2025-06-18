@@ -1,0 +1,20 @@
+.contextMenu{
+    position:absolute;
+    background-color:black;
+    margin:0;
+    padding:0;
+    min-width:150px;
+    border-radius:4px;
+    box-shadow: 2px, 2px, 6px; rgb:(209, 209, 209);
+}
+
+.contextMenu > li{
+    cursor: pointer;
+    list-style-type:none;
+    font-size:12pt;
+    text-align:right;
+}
+
+.contextMenu>li :hover{
+    background-color:gray;
+}
