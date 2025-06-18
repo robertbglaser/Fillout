@@ -12,11 +12,11 @@ function App() {
   return (
     <>
      <Info/>
-     <Details/>
+     {/* <Details/>
      <Other/>
-     <Endings/>
+     <Endings/>*/}
 
-     <Footer/>
+     <Footer/> 
         
     </>
   )
