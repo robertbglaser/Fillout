@@ -1,21 +1,50 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Button, ButtonGroup, FormControl, InputLabel,Input } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { DndContext } from '@dnd-kit/core';
 import { Check, EllipsisVertical, Plus, NotebookText, Flag, Pencil,Clipboard, Copy, Delete } from 'lucide-react';
-
+import { Reorder } from 'framer-motion';
 
 
   
     
 const Footer = () => {
-      const [contextMenu, setContextMenu] = React.useState(null);
+      const [contextMenu, setContextMenu] = useState(null);
+      const [widgets, setWidgets] = useState([])
+    //   const [buttons, setButtons] = useState([
+    //     {
+    //     text:'Add Page',
+    //     icon: <Plus />,
+    // },
+    // {
+    //     text:'Cover',
+    //     icon: <EllipsisVertical />,
+    // },
+    //  {
+    //     text:'Basic Info',
+    //     icon: <NotebookText/>,
+    // },
+    // {
+    //     text:'Contact Info',
+    //     icon: <NotebookText/>,
+    // },
+    // {
+    //     text:'Anything Else?',
+    //     icon: <NotebookText/>,
+    // },
+    // {
+    //     text:'Ending',
+    //     icon: <Check/>,
+    // },
+    // ])
+
       
-    const handleContextMenu = (event) => {
+      
+     const handleContextMenu = (event) => {
       event.preventDefault();
-  
+     
       setContextMenu(
         contextMenu === null
           ? {
@@ -72,7 +101,7 @@ const Footer = () => {
     ]
     
   return (
-    <div onContextMenu={handleContextMenu} style={{ cursor: 'context-menu' }}>
+    <div onContextMenu={handleContextMenu} style={{ cursor: 'context-menu' }} >
         <Menu
         open={contextMenu !== null}
         onClose={handleClose}
@@ -88,20 +117,27 @@ const Footer = () => {
         <MenuItem onClick={handleClose}><Clipboard/>Copy</MenuItem>
         <MenuItem onClick={handleClose}><Copy/>Duplicate</MenuItem>
         <MenuItem onClick={handleClose}><hr/>------------</MenuItem>
-        <MenuItem onClick={handleClose}><Delete/> Delete</MenuItem>
+        <MenuItem onClick={handleClose}><Delete/> Delete</MenuItem> 
       </Menu>
+      {/* <Reorder.Group values={buttons} onReorder={setButtons}>  */}
         <ButtonGroup variant="outlined"> 
     {buttons.map((desc)=>{
         return(
+        // <Reorder.Item values={desc} key={desc}> 
+            
          <Button
+    
          > 
           {desc.icon}
           {desc.text}
         
          </Button>   
         )
+        // </Reorder.Item> 
       })}
+      
         </ButtonGroup>
+        {/* </Reorder.Group> */}
     </div>
   )
 }
