@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Info from './components/Info'
 import Details from './components/Details'
 import Other from './components/Other'
@@ -11,7 +12,16 @@ function App() {
 
   return (
     <>
-     <Info/>
+    <Router>
+      <Routes>
+       <Route path="/" element={<Info/>}/>
+       <Route path="/details" element={<Details/>}/>
+       <Route path="/other" element={<Other/>}/>
+       <Route path="/endings" element={<Endings/>}/>
+      </Routes>
+
+    </Router>
+     {/* <Info/> */}
      {/* <Details/>
      <Other/>
      <Endings/>*/}

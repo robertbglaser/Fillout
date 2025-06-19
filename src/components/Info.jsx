@@ -1,14 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import { Button, ButtonGroup, FormControl, InputLabel,Input } from '@mui/material';
 
 const Info = () => {
+    let navigate = useNavigate()
   return (
     <> 
     <FormControl>
   <InputLabel htmlFor="name">What is your name?</InputLabel>
   <Input type="text" id="name" aria-describedby="my-helper-text" />
-    
+
   <InputLabel htmlFor="name">Are you able to attend?</InputLabel>
     <ButtonGroup size="large" aria-label="Large button group" orientation="vertical">
             <Button>
@@ -18,6 +20,7 @@ const Info = () => {
                 No
             </Button>
     </ButtonGroup>
+    <Button onClick={()=>{navigate('/details')}}>Next</Button>
 </FormControl>
 
 
