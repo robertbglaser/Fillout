@@ -9,7 +9,7 @@ const Details = () => {
   return (
     <div>Details
 
-         <Button onClick={()=>{navigate('/other')}}>Next</Button>
+         <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/other')}}>Next</Button>
     </div>
   )
 }

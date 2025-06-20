@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState,} from 'react'
+import { Link } from 'react-router-dom';
 import { Button, ButtonGroup, FormControl, InputLabel,Input } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -13,33 +14,9 @@ import { Reorder } from 'framer-motion';
 const Footer = () => {
       const [contextMenu, setContextMenu] = useState(null);
       const [widgets, setWidgets] = useState([])
-    //   const [buttons, setButtons] = useState([
-    //     {
-    //     text:'Add Page',
-    //     icon: <Plus />,
-    // },
-    // {
-    //     text:'Cover',
-    //     icon: <EllipsisVertical />,
-    // },
-    //  {
-    //     text:'Basic Info',
-    //     icon: <NotebookText/>,
-    // },
-    // {
-    //     text:'Contact Info',
-    //     icon: <NotebookText/>,
-    // },
-    // {
-    //     text:'Anything Else?',
-    //     icon: <NotebookText/>,
-    // },
-    // {
-    //     text:'Ending',
-    //     icon: <Check/>,
-    // },
-    // ])
+    //  let navigate = useNavigate()
 
+    
       
       
      const handleContextMenu = (event) => {
@@ -77,6 +54,7 @@ const Footer = () => {
         {
         text:'Add Page',
         icon: <Plus />,
+        link: '/'
     },
     {
         text:'Cover',
@@ -85,18 +63,22 @@ const Footer = () => {
      {
         text:'Basic Info',
         icon: <NotebookText/>,
+         link: '/'
     },
     {
         text:'Contact Info',
         icon: <NotebookText/>,
+         link: '/details'
     },
     {
         text:'Anything Else?',
         icon: <NotebookText/>,
+         link: '/other'
     },
     {
         text:'Ending',
         icon: <Check/>,
+         link: '/endings'
     },
     ]
     
@@ -124,14 +106,16 @@ const Footer = () => {
     {buttons.map((desc)=>{
         return(
         // <Reorder.Item values={desc} key={desc}> 
-            
+         <a href={desc.link} rel='nooper noreferr'>   
          <Button
-    
+         
          > 
+          
           {desc.icon}
           {desc.text}
         
-         </Button>   
+         </Button>
+         </a>   
         )
         // </Reorder.Item> 
       })}

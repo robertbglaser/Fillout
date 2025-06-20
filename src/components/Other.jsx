@@ -8,7 +8,7 @@ const Other = () => {
   return (
     <div>Other
 
-         <Button onClick={()=>{navigate('/endings')}}>Next</Button>
+         <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/endings')}}>Next</Button>
     </div>
   )
 }

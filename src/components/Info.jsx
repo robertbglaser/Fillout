@@ -1,26 +1,36 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-
-import { Button, ButtonGroup, FormControl, InputLabel,Input } from '@mui/material';
+import { ArrowRight,  Asterisk, Check } from 'lucide-react';
+import { Button, ButtonGroup, FormControl, FormControlLabel,InputLabel,Input, FormGroup } from '@mui/material';
 
 const Info = () => {
     let navigate = useNavigate()
   return (
     <> 
     <FormControl>
+    <ButtonGroup>    
   <InputLabel htmlFor="name">What is your name?</InputLabel>
   <Input type="text" id="name" aria-describedby="my-helper-text" />
+   </ButtonGroup> 
 
-  <InputLabel htmlFor="name">Are you able to attend?</InputLabel>
-    <ButtonGroup size="large" aria-label="Large button group" orientation="vertical">
+<FormGroup>
+  <InputLabel htmlFor="name">Are you able to attend?<Asterisk/></InputLabel>
+  <FormGroup>
+
+     <ButtonGroup size="large" aria-label="Large button group" orientation="vertical">
             <Button>
+                <Check />
                 Yes
             </Button>
             <Button>
-                No
+              X  Nope
             </Button>
     </ButtonGroup>
-    <Button onClick={()=>{navigate('/details')}}>Next</Button>
+
+    </FormGroup>
+    {/* */}
+     </FormGroup> 
+    <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/details')}}>Next <ArrowRight /></Button>
 </FormControl>
 
 
