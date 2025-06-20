@@ -5,7 +5,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { DndContext } from '@dnd-kit/core';
-import { Check, EllipsisVertical, Plus, NotebookText, Flag, Pencil,Clipboard, Copy, Delete } from 'lucide-react';
+import { Check, EllipsisVertical, Plus, NotebookText, Flag, Pencil,Clipboard, Copy, Delete, User } from 'lucide-react';
 import { Reorder } from 'framer-motion';
 
 
@@ -14,7 +14,7 @@ import { Reorder } from 'framer-motion';
 const Footer = () => {
       const [contextMenu, setContextMenu] = useState(null);
       const [widgets, setWidgets] = useState([])
-    //  let navigate = useNavigate()
+
 
     
       
@@ -28,9 +28,7 @@ const Footer = () => {
               mouseX: event.clientX + 2,
               mouseY: event.clientY - 6,
             }
-          : // repeated contextmenu when it is already open closes it with Chrome 84 on Ubuntu
-            // Other native context menus might behave different.
-            // With this behavior we prevent contextmenu from the backdrop to re-locale existing context menus.
+          :
             null,
       );
   
@@ -69,6 +67,11 @@ const Footer = () => {
         text:'Contact Info',
         icon: <NotebookText/>,
          link: '/details'
+    },
+    {
+        text:'Guests',
+        icon: <User/>,
+         link: '/guests'
     },
     {
         text:'Anything Else?',

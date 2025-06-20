@@ -4,6 +4,8 @@ import Info from './components/Info'
 import Details from './components/Details'
 import Other from './components/Other'
 import Endings from './components/Endings'
+import ContactInfo from './components/ContactInfo'
+import Guests from './components/Guests'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -15,6 +17,8 @@ function App() {
     <Router>
       <Routes>
        <Route path="/" element={<Info/>}/>
+       <Route path="/contactInfo" element={<ContactInfo/>}/>
+       <Route path='/guests' element={<Guests/>}/>
        <Route path="/details" element={<Details/>}/>
        <Route path="/other" element={<Other/>}/>
        <Route path="/endings" element={<Endings/>}/>
