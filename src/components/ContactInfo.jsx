@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight,  Asterisk, Check, Mail } from 'lucide-react';
-import { Button, ButtonGroup, FormControl, FormControlLabel,InputLabel,Input, FormGroup } from '@mui/material';
+import { Button, ButtonGroup, Container, FormControl, FormControlLabel,InputLabel,Input, FormGroup, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -16,11 +16,10 @@ const ContactInfo = () => {
     const [value, setValue] = React.useState(dayjs('2022-04-17'));
 
   return (
- <FormControl>
-     <FormGroup> 
-       < InputLabel htmlFor="name">What is your email address?<Asterisk/>
-</InputLabel>
-       <p>We will send you birthday updates here!</p>
+ <Container> 
+        <Typography variant='h6' sx={{color:'#FFFF'}}  htmlFor="name">What is your email address?<Asterisk/></Typography>
+ 
+    <Typography variant='p'> We will send you birthday updates here!</Typography>
          
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker', 'DatePicker']}>
@@ -30,13 +29,15 @@ const ContactInfo = () => {
        
       </DemoContainer>
     </LocalizationProvider>
-    </FormGroup>
-    <FormGroup> </FormGroup>
-    <FormGroup> 
+     <br/>
+      <br/>
+       <br/>
         <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/guests')}}>Next <ArrowRight /></Button>
-    </FormGroup>
+<br/>
+      <br/>
+       <br/>
 
-  </FormControl>
+ </Container>
 
   )
 }

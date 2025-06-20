@@ -19,14 +19,14 @@ const Guests = () => {
         return(
          
             <Box p={2} m={2 }style={{borderStyle:'solid', borderColor: 'gray', backgroundColor:'gray'}}key={count}>{count}</Box> 
-            // <Button variant="plain" style={{borderStyle:'solid', backgroundColor:'gray'}}key={count}>{count}</Button>
+        
         )
        })}
 
 <br/>
        <br/> 
       </Box>
-         <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/other')}}>Next <ArrowRight /></Button>
+         <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/anythingelse')}}>Next <ArrowRight /></Button>
      
        </Container>
        )

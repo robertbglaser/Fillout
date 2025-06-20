@@ -30,7 +30,13 @@ const theme = createTheme({
   return (
     <div>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/0FHEeG_uq5Y?si=9z5dPtO4hwUI6TVy" title="YouTube video player" border="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/0FHEeG_uq5Y?si=9z5dPtO4hwUI6TVy?autoPlay=1"
+         title="YouTube video player" 
+         border="0" 
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+         referrerPolicy="strict-origin-when-cross-origin" 
+         allowFullScreen></iframe>
          <br/>
           <br/>
          <Button sx={{bgcolor:'#DAA520'}} onClick={()=>{navigate('/')}}>Click here to return home</Button>

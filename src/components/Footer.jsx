@@ -57,6 +57,7 @@ const Footer = () => {
     {
         text:'Cover',
         icon: <EllipsisVertical />,
+         link: '/'
     },
      {
         text:'Basic Info',
@@ -66,7 +67,7 @@ const Footer = () => {
     {
         text:'Contact Info',
         icon: <NotebookText/>,
-         link: '/details'
+         link: '/contactInfo'
     },
     {
         text:'Guests',
@@ -76,7 +77,7 @@ const Footer = () => {
     {
         text:'Anything Else?',
         icon: <NotebookText/>,
-         link: '/other'
+         link: '/anythingelse'
     },
     {
         text:'Ending',
@@ -86,7 +87,7 @@ const Footer = () => {
     ]
     
   return (
-    <div onContextMenu={handleContextMenu} style={{ cursor: 'context-menu' }} >
+    <div className='footer' onContextMenu={handleContextMenu} style={{ cursor: 'context-menu' }} >
         <Menu
         open={contextMenu !== null}
         onClose={handleClose}
@@ -110,7 +111,7 @@ const Footer = () => {
         return(
         // <Reorder.Item values={desc} key={desc}> 
          <a href={desc.link} rel='nooper noreferr'>   
-         <Button
+         <Button style={{backgroundColor:'white', color:'black', borderColor:'black'}}
          
          > 
           
