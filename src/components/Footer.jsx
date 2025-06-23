@@ -17,7 +17,7 @@ import {Droppable} from './Droppable';
 const Footer = () => {
       const [contextMenu, setContextMenu] = useState(null);
       const [widgets, setWidgets] = useState([])
-      const [actionTab, setActionTab ] = useState([])
+      const [actionTab, setActionTab ] = useState([buttons])
 
 const handleDragEnd=(event) =>{
 const {active, over} = event
