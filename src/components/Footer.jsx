@@ -6,10 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { closestCorners, DndContext } from '@dnd-kit/core';
 import { Check, EllipsisVertical, Plus, NotebookText, Flag, Pencil,Clipboard, Copy, Delete, User } from 'lucide-react';
-import { DndContext } from '@dnd-kit/core';
 
-import {Draggable} from './Draggable';
-import {Droppable} from './Droppable';
 
 
   
@@ -19,14 +16,8 @@ const Footer = () => {
       const [widgets, setWidgets] = useState([])
       const [actionTab, setActionTab ] = useState([buttons])
 
-const handleDragEnd=(event) =>{
-const {active, over} = event
 
-if (!over) return;
-const taskId = String(active.id)  
-const newId = over.id
-
-}
+ 
     
       
       

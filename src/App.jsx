@@ -9,7 +9,7 @@ import Guests from './components/Guests'
 import Footer from './components/Footer'
 import AnythingElse from './components/AnythingElse'
 import './App.css'
-import {DndContext} from '@dnd-kit/core';
+
 
 
 function App() {
@@ -30,9 +30,9 @@ function App() {
       </Routes>
 
     </Router>
-     <DndContext>
+    
          <Footer/> 
-    </DndContext>
+    
     </>
   )
 }
