@@ -4,9 +4,12 @@ import { Button, ButtonGroup, FormControl, InputLabel,Input } from '@mui/materia
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import { DndContext } from '@dnd-kit/core';
+import { closestCorners, DndContext } from '@dnd-kit/core';
 import { Check, EllipsisVertical, Plus, NotebookText, Flag, Pencil,Clipboard, Copy, Delete, User } from 'lucide-react';
-import { Reorder } from 'framer-motion';
+import { DndContext } from '@dnd-kit/core';
+
+import {Draggable} from './Draggable';
+import {Droppable} from './Droppable';
 
 
   
@@ -14,8 +17,16 @@ import { Reorder } from 'framer-motion';
 const Footer = () => {
       const [contextMenu, setContextMenu] = useState(null);
       const [widgets, setWidgets] = useState([])
+      const [actionTab, setActionTab ] = useState([])
 
+const handleDragEnd=(event) =>{
+const {active, over} = event
 
+if (!over) return;
+const taskId = String(active.id)  
+const newId = over.id
+
+}
     
       
       
@@ -52,37 +63,44 @@ const Footer = () => {
         {
         text:'Add Page',
         icon: <Plus />,
-        link: '/'
+        link: '/',
+        id:1
     },
     {
         text:'Cover',
         icon: <EllipsisVertical />,
-         link: '/'
+         link: '/',
+        id:2
     },
      {
         text:'Basic Info',
         icon: <NotebookText/>,
-         link: '/'
+         link: '/',
+        id:3
     },
     {
         text:'Contact Info',
         icon: <NotebookText/>,
-         link: '/contactInfo'
+         link: '/contactInfo',
+        id:4
     },
     {
         text:'Guests',
         icon: <User/>,
-         link: '/guests'
+         link: '/guests',
+        id:5
     },
     {
         text:'Anything Else?',
         icon: <NotebookText/>,
-         link: '/anythingelse'
+         link: '/anythingelse',
+        id:6
     },
     {
         text:'Ending',
         icon: <Check/>,
-         link: '/endings'
+         link: '/endings',
+        id:7
     },
     ]
     
@@ -105,11 +123,11 @@ const Footer = () => {
         <MenuItem onClick={handleClose}><hr/>------------</MenuItem>
         <MenuItem onClick={handleClose}><Delete/> Delete</MenuItem> 
       </Menu>
-      {/* <Reorder.Group values={buttons} onReorder={setButtons}>  */}
+      
         <ButtonGroup variant="outlined"> 
     {buttons.map((desc)=>{
         return(
-        // <Reorder.Item values={desc} key={desc}> 
+        <DndContext collisionDetection={closestCorners}> 
          <a href={desc.link} rel='nooper noreferr'>   
          <Button style={{backgroundColor:'white', color:'black', borderColor:'black'}}
          
@@ -119,13 +137,14 @@ const Footer = () => {
           {desc.text}
         
          </Button>
-         </a>   
+         </a> 
+         </DndContext> 
         )
-        // </Reorder.Item> 
+    
       })}
       
         </ButtonGroup>
-        {/* </Reorder.Group> */}
+      
     </div>
   )
 }

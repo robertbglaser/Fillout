@@ -32,7 +32,7 @@ const Info = () => {
      
 <br/>
 <br/> <FormControl>
-           <FormLabel sx={{color:'#FFFF'}}>Are you able to attend <Asterisk/></FormLabel>
+           <FormLabel sx={{color:'#FFFF'}}>Are you able to attend<Asterisk/></FormLabel>
            <RadioGroup>
               <FormControlLabel value="Yes" control={<Radio/>} label={<Check/> } sx={{color:'#FFFF'}} variant="solid"color="danger"/>
                <FormControlLabel value="No" control={<Radio/>} label={'X  NO'  } sx={{color:'#FFFF'}} variant="solid"color="danger"/>

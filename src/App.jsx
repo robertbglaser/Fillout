@@ -9,9 +9,13 @@ import Guests from './components/Guests'
 import Footer from './components/Footer'
 import AnythingElse from './components/AnythingElse'
 import './App.css'
+import {DndContext} from '@dnd-kit/core';
+
 
 function App() {
   const [count, setCount] = useState(0)
+
+
 
   return (
     <>
@@ -26,9 +30,9 @@ function App() {
       </Routes>
 
     </Router>
-     
-     <Footer/> 
-        
+     <DndContext>
+         <Footer/> 
+    </DndContext>
     </>
   )
 }
